@@ -46,5 +46,8 @@ Parametrized tests can use it.each() for multiple input examples.
 
 
 Jest hooks help reduce code duplication (beforeEach, afterEach; beforeAll, afterAll in integration tests).
+Good practice to put our hooks inside describe blocks.
+
+We can test for errors, by wrapping in expectError function, or using an arrow function inside expect, or using try catch block.
 
 
