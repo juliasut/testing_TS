@@ -13,19 +13,34 @@ describe('Utils test suite', () => {
     expect(actual).toBe(expected);
   });
 
-  it('should return info for a valid string', () => {
-    const actual = getStringInfo('My-String');
-
-    expect(actual.lowerCase).toBe('my-string');
-    expect(actual.extraInfo).toEqual({});
-    expect(actual.characters).toHaveLength(9);
-    expect(actual.characters).toContain<string>('M');
-    expect(actual.characters).toEqual(
-      expect.arrayContaining(['S', 't', 'r', 'i', 'n', 'g', 'M', 'y'])
-    );
-    expect(actual.extraInfo).not.toBe(undefined);
-    expect(actual.extraInfo).not.toBeUndefined();
-    expect(actual.extraInfo).toBeDefined();
-    expect(actual.extraInfo).toBeTruthy();
+  describe('getStringInfo for arg My-String should', () => {
+    test('return right length', () => {
+      const actual = getStringInfo('My-String');
+      expect(actual.characters).toHaveLength(9);
+    });
+    test('return right lower case', () => {
+      const actual = getStringInfo('My-String');
+      expect(actual.lowerCase).toBe('my-string');
+    });
+    test('return right upperCase', () => {
+      const actual = getStringInfo('My-String');
+      expect(actual.upperCase).toBe('MY-STRING');
+    });
+    test('return right characters', () => {
+      const actual = getStringInfo('My-String');
+      expect(actual.characters).toContain<string>('M');
+      expect(actual.characters).toEqual(
+        expect.arrayContaining(['S', 't', 'r', 'i', 'n', 'g', 'M', 'y'])
+      );
+    });
+    test('return defined extra info', () => {
+      const actual = getStringInfo('My-String');
+      expect(actual.extraInfo).toBeDefined();
+      expect(actual.extraInfo).toBeTruthy();
+    });
+    test('return defined extra info', () => {
+      const actual = getStringInfo('My-String');
+      expect(actual.extraInfo).toEqual({});
+    });
   });
 });
