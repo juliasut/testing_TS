@@ -1,7 +1,7 @@
 import { StringUtils, getStringInfo, toUpperCase } from '../app/Utils';
 
 describe('Utils test suite', () => {
-  describe.only('StringUtils tests', () => {
+  describe('StringUtils tests', () => {
     let sut: StringUtils;
     beforeEach(() => {
       sut = new StringUtils();
@@ -26,7 +26,7 @@ describe('Utils test suite', () => {
       }).toThrowError('Invalid argument!');
     });
 
-    it.only('Should throw error on invalid argument - try catch block', (done) => {
+    it('Should throw error on invalid argument - try catch block', (done) => {
       try {
         sut.toUpperCase('');
         done('GetStringInfo should throw error for invalid arg!');

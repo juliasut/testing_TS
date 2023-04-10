@@ -50,4 +50,6 @@ Good practice to put our hooks inside describe blocks.
 
 We can test for errors, by wrapping in expectError function, or using an arrow function inside expect, or using try catch block.
 
+Under the hood jest uses a library called Istanbul for covarage.
+
 
