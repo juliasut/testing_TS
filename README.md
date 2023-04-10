@@ -43,3 +43,8 @@ Parametrized tests can use it.each() for multiple input examples.
 
 - Unit tests should cover all the cases/scenarios/edge cases
 - 100 code coverage does not automatically imply thouroughness
+
+
+Jest hooks help reduce code duplication (beforeEach, afterEach; beforeAll, afterAll in integration tests).
+
+
